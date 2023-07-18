@@ -1,0 +1,34 @@
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    </head>
+
+    <body>
+
+    {% if users|length < 1 %}
+    <h4>There are no users. Sign up today!</h4>
+    {% else %}
+
+        {% for user in users %}
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>firstname</th>
+                <th>lastname</th>
+            </tr>
+            <tr>
+                <th>{{ user['username'] }}</th>
+                 <th>{{ user['password'] }}</th>
+                 <th>{{ user['firstname'] }}</th>
+                 <th>{{ user['lastname'] }}</th>
+            </tr>
+        </table>
+        {% endfor %}
+
+    {% endif %}
+
+    </body>
+    </html>
